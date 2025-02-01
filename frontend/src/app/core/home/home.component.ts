@@ -62,9 +62,16 @@ export class HomeComponent {
   };
 
   getRowColor(index: number): string {
-    const rowIndex = Math.floor(index / 4); // Since there are 4 cards per row
-    const colors = ['#ADD8E6', '#FFB6C1', '#98FB98', '#FFCCCB', '#B0E0E6', '#FFB3E6']; // Light colors
-    return colors[rowIndex % colors.length];  // Loop through the colors
+    const rowIndex = Math.floor(index / 4); // Aangezien er 4 kaarten per rij zijn
+    const colors = [
+      '#D32F2F', // Rood (Rode Kruis kleur)
+      '#F8D7DA', // Lichtrood (Background alert kleur)
+      '#C62828', // Diep rood
+      '#E57373', // Zacht rood
+      '#FAE5E5', // Lichtroze (Huidkleurig, humanitaire associatie)
+      '#FFF5F5'  // Off-white, bijna wit, neutraler
+    ];
+    return colors[rowIndex % colors.length]; // Kleuren roteren per rij
   }
 
   // Type currentLang more specifically as a key of the 'titles' object
@@ -94,9 +101,7 @@ export class HomeComponent {
       this.text = 'Нажмите на значок, и я могу вам помочь';
     } else if (this.currentLang === 'AR') {
       this.text = 'اضغط على أيقونة وسأتمكن من مساعدتك أكثر'
-    }
-
-    else {
+    } else {
       this.text = 'Druk op een icoontje en dan kan ik je verder helpen';
     }
   }
