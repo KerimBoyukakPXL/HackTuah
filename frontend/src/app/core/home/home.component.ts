@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { LanguageService } from "../../services/language.service";
-import {NgForOf, NgStyle} from "@angular/common";
+import {NgForOf, NgIf, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     NgForOf,
-    NgStyle
+    NgStyle,
+    NgIf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -60,6 +61,25 @@ export class HomeComponent {
       'مساعدة كبار السن', 'الحمل'
     ]
   };
+
+  // Variables for fullscreen content
+  isFullScreen: boolean = false;
+  fullScreenTitle: string = '';
+  fullScreenImage: string = '';
+  fullScreenDescription: string = '';
+
+  // Other existing variables ...
+
+  openFullScreen(index: number): void {
+    this.fullScreenTitle = this.titlesList[index];
+    this.fullScreenImage = this.images[index];
+    this.fullScreenDescription = `Detailed information about ${this.titlesList[index]}.`; // Customize this as needed
+    this.isFullScreen = true;
+  }
+
+  closeFullScreen(): void {
+    this.isFullScreen = false;
+  }
 
   getRowColor(index: number): string {
     const rowIndex = Math.floor(index / 4); // Aangezien er 4 kaarten per rij zijn

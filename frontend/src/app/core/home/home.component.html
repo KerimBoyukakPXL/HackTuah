@@ -15,9 +15,19 @@
          'box-shadow': '0 4px 6px rgba(0, 0, 0, 0.1)',
          'transition': 'transform 0.3s ease, box-shadow 0.3s ease'
        }"
-       class="card">
+       class="card" (click)="openFullScreen(i)">
     <img [src]="images[i]" style="width: 50px; height: 50px;">
     <p style="margin-top: 10px; text-align: center; font-size: 14px; font-weight: bold;">{{ title }}</p>
+  </div>
+</div>
+
+<!-- Fullscreen Modal (Hidden by default) -->
+<div *ngIf="isFullScreen" class="fullscreen-modal">
+  <div class="fullscreen-content">
+    <h1>{{ fullScreenTitle }}</h1>
+    <img [src]="fullScreenImage" alt="Fullscreen image" class="fullscreen-image">
+    <p>{{ fullScreenDescription }}</p>
+    <button class="close" (click)="closeFullScreen()">Close</button>
   </div>
 </div>
 
