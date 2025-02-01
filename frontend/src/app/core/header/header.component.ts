@@ -21,7 +21,8 @@ export class HeaderComponent {
   languages = [
     { code: 'NL', flag: 'https://flagcdn.com/w40/nl.png' },
     { code: 'EN', flag: 'https://flagcdn.com/w40/gb.png' },
-    { code: 'RU', flag: 'https://flagcdn.com/w40/ua.png' }
+    { code: 'RU', flag: 'https://flagcdn.com/w40/ua.png' },
+    { code: 'AR', flag: 'https://flagcdn.com/w40/sa.png' },
   ];
   constructor(private languageService: LanguageService) {}
 
