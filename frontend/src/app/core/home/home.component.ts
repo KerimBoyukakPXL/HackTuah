@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-home',
@@ -48,13 +49,28 @@ export class HomeComponent {
     'Civiele Bescherming',
     'Bejaarde hulp',
     'Zwangerschap'
-
-
-
-
-
-
-    // Add more titles as needed
   ];
+
+  currentLang: string = 'NL';
+  text: string = '';
+
+  constructor(private languageService: LanguageService) {}
+
+  ngOnInit(): void {
+    this.languageService.currentLanguage.subscribe(lang => {
+      this.currentLang = lang;
+      this.updateText();
+    });
+  }
+
+  updateText(): void {
+    if (this.currentLang === 'EN') {
+      this.text = 'Press an icon and I can help you further';
+    } else if (this.currentLang === 'RU') {
+      this.text = 'Нажмите на значок, и я могу вам помочь';
+    } else {
+      this.text = 'Druk op een icoontje en dan kan ik je verder helpen';
+    }
+  }
 
 }
