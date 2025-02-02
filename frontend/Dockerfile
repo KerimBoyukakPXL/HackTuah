@@ -14,7 +14,7 @@ RUN ng build --configuration production
 FROM nginx:alpine
 
 # !! /browser !! Angular 17 changes !!
-COPY --from=build /usr/src/app/dist/hacktuah/browser /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/frontend/browser /usr/share/nginx/html
 
 # or? COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
