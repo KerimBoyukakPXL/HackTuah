@@ -31,7 +31,6 @@ export class HomeComponent {
     'https://raw.githubusercontent.com/rodekruis/OCHA-Humanitarian-Icons/8c4b34bd02aae0bbba2677619a619be6c2c6ebb9/svg/Civil-military-coordination.svg',
     'https://raw.githubusercontent.com/rodekruis/OCHA-Humanitarian-Icons/8c4b34bd02aae0bbba2677619a619be6c2c6ebb9/svg/Elderly.svg',
     'https://raw.githubusercontent.com/rodekruis/OCHA-Humanitarian-Icons/8c4b34bd02aae0bbba2677619a619be6c2c6ebb9/svg/Pregnant.svg'
-    // Add more image filenames as needed
   ];
 
   // Corresponding list of card titles
@@ -64,16 +63,11 @@ export class HomeComponent {
 
   // Variables for fullscreen content
   isFullScreen: boolean = false;
-  fullScreenTitle: string = '';
-  fullScreenImage: string = '';
-  fullScreenDescription: string = '';
+
 
   // Other existing variables ...
 
   openFullScreen(index: number): void {
-    this.fullScreenTitle = this.titlesList[index];
-    this.fullScreenImage = this.images[index];
-    this.fullScreenDescription = `Detailed information about ${this.titlesList[index]}.`; // Customize this as needed
     this.isFullScreen = true;
   }
 
@@ -82,7 +76,7 @@ export class HomeComponent {
   }
 
   getRowColor(index: number): string {
-    const rowIndex = Math.floor(index / 4); // Aangezien er 4 kaarten per rij zijn
+    const rowIndex = Math.floor(index / 4);
     const colors = [
       '#D32F2F', // Rood (Rode Kruis kleur)
       '#F8D7DA', // Lichtrood (Background alert kleur)
@@ -91,25 +85,24 @@ export class HomeComponent {
       '#FAE5E5', // Lichtroze (Huidkleurig, humanitaire associatie)
       '#FFF5F5'  // Off-white, bijna wit, neutraler
     ];
-    return colors[rowIndex % colors.length]; // Kleuren roteren per rij
+    return colors[rowIndex % colors.length];
   }
 
-  // Type currentLang more specifically as a key of the 'titles' object
-  currentLang: keyof typeof this.titles = 'NL';  // Ensure 'currentLang' is typed correctly
+  currentLang: keyof typeof this.titles = 'NL';
   text: string = '';
-  titlesList: string[] = this.titles[this.currentLang];  // Bind titles dynamically
+  titlesList: string[] = this.titles[this.currentLang];
 
   constructor(private languageService: LanguageService) {
     this.languageService.currentLanguage.subscribe((lang: keyof typeof this.titles) => {
       this.currentLang = lang;
-      this.titlesList = this.titles[lang];  // Update titles based on selected language
+      this.titlesList = this.titles[lang];
     });
   }
 
   ngOnInit(): void {
     this.languageService.currentLanguage.subscribe(lang => {
       this.currentLang = lang;
-      this.titlesList = this.titles[lang];  // Update titles based on selected language
+      this.titlesList = this.titles[lang];
       this.updateText();
     });
   }

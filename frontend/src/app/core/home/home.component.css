@@ -64,3 +64,15 @@ h1 {
 .close:hover {
   background-color: #C62828;
 }
+
+.cardsiez {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}

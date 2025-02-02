@@ -34,7 +34,7 @@ export class HeaderComponent {
   selectLanguage(code: string, flag: string): void {
     this.selectedLang = code;
     this.selectedFlag = flag;
-    this.languageService.setLanguage(code);  // Stel de taal in via de service
+    this.languageService.setLanguage(code);
     this.dropdownOpen = false;
     console.log("Selected language:", code);
   }
