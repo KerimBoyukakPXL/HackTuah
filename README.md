@@ -2,6 +2,9 @@
 
 Hello! 
 
+<img width="1197" alt="Scherm­afbeelding 2025-02-02 om 10 22 06" src="https://github.com/user-attachments/assets/a81957a5-7309-4c71-84e4-8db79d806f0a" />
+
+
 This is our tool we made for "Het Rode Kruis Nederland" for a hackathon we attended.
 
 The apps use is that you can ask a chatbot specific question instead of a confusing interface.
