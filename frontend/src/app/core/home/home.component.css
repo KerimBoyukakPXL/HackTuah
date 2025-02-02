@@ -138,13 +138,27 @@ body {
   height: auto;
 }
 
-.bottom-border {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #1b5fbf;
+
+
+.greeting-container {
+  text-align: center;
+  padding: 20px;
+}
+
+#greeting {
+  padding: 20px;
+  font-size: 2.5rem; /* Slightly larger for better impact */
+  font-weight: 700;  /* More pronounced boldness */
+  color: #333;
+  text-align: center; /* Center align the text */
+  font-family: 'Arial', sans-serif; /* Use a clean font */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+}
+
+.sub {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 10px;
 }
 
 
