@@ -2,7 +2,7 @@
 
 Hello! 
 
-This is our open source project for a hackathon we attended.
+This is our tool we made for "Het Rode Kruis Nederland" for a hackathon we attended.
 
 The apps use is that you can ask a chatbot specific question instead of a confusing interface.
 We trained the ai on the data from "Het Rode Kruis Nederland" and we trained it so well it doesnt hallucinate info about important things people in need might need.
